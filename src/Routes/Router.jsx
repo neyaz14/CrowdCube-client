@@ -12,11 +12,13 @@ import Login from '../Authentication/Login';
 import PrivateRouter from '../PrivateRoutes/PrivateRouter';
 import CardDetails from '../PrivateRoutes/CardDetails';
 import UpdateCamp from '../PrivateRoutes/UpdateCamp';
+import ErrorPage from '../Pages/ErrorPage';
 
 const Router = createBrowserRouter([
     {
       path: "/",
       element: <Mainlayout></Mainlayout>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path: '/',
