@@ -13,18 +13,18 @@ const RunningCampCard = ({ campCard }) => {
         description,
         deadline,
     } = campCard;
-    // console.log(_id)
+
     return (
         <div>
             <div className="max-w-sm mx-auto running-camp-card-bg running-camp-card-bg-hover rounded-lg shadow-md overflow-hidden max-h-[580px]">
-                {/* Thumbnail */}
+           
                 <img
                     src={thumbnail}
                     alt={title}
                     className="w-[384px] h-48 object-cover"
                 />
 
-                {/* Content */}
+           
                 <div className="p-6 mb-3">
                     {/* Title */}
                     <h2 className="text-2xl font-bold ">{title}</h2>

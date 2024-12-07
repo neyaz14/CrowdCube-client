@@ -6,7 +6,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 // import Style from 'index.css'
 const Navbar = () => {
 
-    const {  Currentuser ,singOut ,currentloggedInUser} = useContext(AuthContext);
+    const { Currentuser, singOut, currentloggedInUser } = useContext(AuthContext);
 
     const Links = <>
         <li><NavLink to='/' className="inactive" activeClassName="active">Home</NavLink></li>
@@ -17,9 +17,9 @@ const Navbar = () => {
     </>
 
 
-    const handleSingOut =()=>{
+    const handleSingOut = () => {
         singOut()
-        
+
     }
 
     return (
@@ -85,32 +85,25 @@ const Navbar = () => {
                         Currentuser ?
 
 
-                        <div className="user-info"> 
+                            <div className="user-info">
 
-                        <img src={Currentuser?.photoURL} alt="User" title={Currentuser.displayName} className="user-photo" />
+                                <img src={Currentuser?.photoURL} alt="User" title={Currentuser.displayName} className="user-photo" />
 
-                        <button 
-                        onClick={handleSingOut}
-                        className='btn-sm btn-outline text-orange btn'>
-                            <NavLink to='/login'>LogOut</NavLink></button> 
+                                <button
+                                    onClick={handleSingOut}
+                                    className='btn-sm btn-outline text-orange btn'>
+                                    <NavLink to='/login'>LogOut</NavLink></button>
+
+                            </div>
+
+
+
                         
-                        </div>
-
-
-
-                            // <div className='flex justify-around items-center'>
-                            //     <figure><img className='user-photo' src={`currentloggedInUser?.photoURL,''s Profile Pic'`} alt={currentloggedInUser?.displayName} /></figure>
-
-                            //     <div>
-                            //         <p>{currentloggedInUser.displayName}</p>
-                            //         <button className='btn-sm btn-outline text-orange btn'><NavLink to='/login'>LogOut</NavLink></button>
-                            //     </div>
-
-                            // </div>
                             :
-                            <>
-                                <button className=' btn'><NavLink to='/login'>Login</NavLink></button>
-                            </>
+                            <div className='flex md:flex-row flex-col md:space-x-3 '>
+                                <button className='bg-orange text-white font-semibold bg-light-green-hover btn'><NavLink to='/login'>Login</NavLink></button>
+                                <button className='bg-orange text-white font-semibold bg-light-green-hover btn'><NavLink to='/register'>Register</NavLink></button>
+                            </div>
                     }
 
 

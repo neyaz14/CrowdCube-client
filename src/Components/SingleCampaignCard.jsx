@@ -22,6 +22,8 @@ const SingleCampaignCard = ({ campaignCard }) => {
                             <td className='border border-yellow-400 text-emerald-900 md:font-semibold md:text-[16px] overflow-hidden max-w-7'>{type}</td>
 
                             <td className='border border-yellow-400 text-emerald-900 md:font-semibold md:text-[16px] overflow-hidden max-w-7'>{deadline}</td>
+
+                            <td className='border border-yellow-400 text-emerald-900 md:font-semibold md:text-[16px] overflow-hidden max-w-7'>{minDonation}</td>
                          
 
 
