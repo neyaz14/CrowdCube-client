@@ -35,10 +35,12 @@ const Router = createBrowserRouter([
             loader: ()=>fetch('http://localhost:5000/campaign')
         },{
             path: '/myDonations',
-            element: <PrivateRouter><MyDonations></MyDonations></PrivateRouter>
+            element: <PrivateRouter><MyDonations></MyDonations></PrivateRouter>,
+            loader:()=>  fetch('http://localhost:5000/userDonation')
         },{
             path: '/login',
-            element: <Login></Login>
+            element: <Login></Login>,
+            loader: ()=> fetch('http://localhost:5000/users')
         },{
             path: '/register',
             element: <Register></Register>

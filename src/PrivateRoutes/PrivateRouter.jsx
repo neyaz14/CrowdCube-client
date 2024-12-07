@@ -5,12 +5,13 @@ import { AuthContext } from '../Provider/AuthProvider';
 const PrivateRouter = ({children}) => {
     const location = useLocation();
     const disiredLocation = location.pathname;
+    
     // console.log(location.pathname);
     const {Currentuser,currentloggedInUser, loading} = useContext(AuthContext);
     if(loading){
         return <span className="loading loading-ball loading-lg"></span>
     }
-    else if(currentloggedInUser){
+    else if(Currentuser){
         return children;
     }
     return (

@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 const CardDetails = () => {
     const {currentloggedInUser, Currentuser} = useContext(AuthContext);
     const allCampaign = useLoaderData();
-    // console.log(currentloggedInUser, Currentuser);
+    console.log(currentloggedInUser, Currentuser);
  
     const { id} = useParams();
     // console.log(id)
@@ -27,8 +27,12 @@ const CardDetails = () => {
     // console.log(newDonation)
 
     const handleSendDonation = ()=>{
-        const newDonation = {campaignID:_id,organizerEmail: email,organizerName: name,thumbnail,title, type,minDonation,description,deadline,};
+        const donarName = Currentuser.displayName;
+        const donarEmail = Currentuser.email ;
+        console.log(donarEmail, donarName)
+        const newDonation = {campaignID:_id,organizerEmail: email,organizerName: name,thumbnail,title, type,minDonation,description,deadline,donarEmail, donarName};
 
+        console.log(newDonation)
         fetch('http://localhost:5000/userDonation',{
             method:'POST',
             headers:{

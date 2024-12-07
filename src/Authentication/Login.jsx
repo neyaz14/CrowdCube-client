@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 
 
 import 'animate.css';
@@ -15,9 +15,13 @@ const Login = () => {
     const [msg, setmsg] = useState();
     const { login , googleRegister,updateUserProfile,Currentuser, currentloggedInUser,setCurrentUser} = useContext(AuthContext);
 
+    const allUsers = useLoaderData();
+    console.log(allUsers);
     const location = useLocation();
     const navigate = useNavigate();
 
+
+    // const 
     const handlelogin = e => {
         setmsg('')
         e.preventDefault();
@@ -89,17 +93,11 @@ const Login = () => {
     
     const handleLoginGOOGLE = ()=>{
         setmsg('');
+        
         googleRegister()
         .then(res => {
             const newRegisteredUser = res.user;
-            // setRegisteredUser(newRegisteredUser);
-            // updateUserProfile({ displayName: res.user.displayName, photoURL: res.user.photoURL });
-            
-            // console.log(newRegisteredUser);
-            // setCurrentUser(newRegisteredUser);
-            // console.log(currentloggedInUser);
-            // console.log(Currentuser)
-
+         
 
 
             Swal.fire({
@@ -125,6 +123,7 @@ const Login = () => {
                 `
                 }
             });
+            navigate(location?.state ? location.state : "/")
             //   e.target.reset();
 
         })
