@@ -20,6 +20,7 @@ const Navbar = () => {
     const handleSingOut = () => {
         singOut()
 
+
     }
 
     return (
@@ -85,20 +86,39 @@ const Navbar = () => {
                         Currentuser ?
 
 
-                            <div className="user-info">
+                            // <div className="user-info">
 
-                                <img src={Currentuser?.photoURL} alt="User" title={Currentuser.displayName} className="user-photo" />
+                            //     <img src={Currentuser?.photoURL} alt="User" title={Currentuser.displayName} className="user-photo" />
 
-                                <button
-                                    onClick={handleSingOut}
-                                    className='btn-sm btn-outline text-orange btn'>
-                                    <NavLink to='/login'>LogOut</NavLink></button>
+                            //     <button
+                            //         onClick={handleSingOut}
+                            //         className='btn-sm btn-outline text-orange btn'>
+                            //         <NavLink to='/login'>LogOut</NavLink></button>
+
+                            // </div>
+
+                            <div className="flex items-center space-x-4">
+                                <div className="relative group">
+                                    <img
+                                        src={Currentuser?.photoURL}
+                                        alt="User"
+                                        className="w-10 h-10 rounded-full cursor-pointer"
+                                    />
+                                    <div className='absolute top-7 left-2 transform -translate-x-1/2 mt-2 hidden group-hover:block bg-gray-700 text-sm px-2 py-1 rounded shadow-lg'>
+                                        <span className="   text-white ">{Currentuser?.displayName}</span>
+                                        <button
+                                            onClick={handleSingOut}
+                                            className='btn-sm btn-outline text-orange btn'>
+                                            LogOut
+                                        </button>
+                                    </div>
+                                </div>
 
                             </div>
 
 
 
-                        
+
                             :
                             <div className='flex md:flex-row flex-col md:space-x-3 '>
                                 <button className='bg-orange text-white font-semibold bg-light-green-hover btn'><NavLink to='/login'>Login</NavLink></button>
