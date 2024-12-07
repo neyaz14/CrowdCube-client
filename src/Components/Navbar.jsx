@@ -121,8 +121,8 @@ const Navbar = () => {
 
                             :
                             <div className='flex md:flex-row flex-col md:space-x-3 '>
-                                <button className='bg-orange text-white font-semibold bg-light-green-hover btn'><NavLink to='/login'>Login</NavLink></button>
-                                <button className='bg-orange text-white font-semibold bg-light-green-hover btn'><NavLink to='/register'>Register</NavLink></button>
+                                <button className='bg-orange text-white font-semibold bg-light-green-hover btn'><Link to='/login'>Login</Link></button>
+                                <button className='bg-orange text-white font-semibold bg-light-green-hover btn'><Link to='/register'>Register</Link></button>
                             </div>
                     }
 

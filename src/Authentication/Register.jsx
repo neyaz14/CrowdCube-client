@@ -148,7 +148,7 @@ const Register = () => {
             .then(res => {
                 const newRegisteredUser = res.user;
                 // console.log(res.user.displayName, res.user.photoURL)
-                // updateUserProfile({ displayName: res.user.displayName, photoURL: res.user.photoURL });
+                updateUserProfile({ displayName: res.user.displayName, photoURL: res.user.photoURL });
                 // setCurrentUser(newRegisteredUser);
                 // console.log(newRegisteredUser);
                 // console.log(Currentuser)

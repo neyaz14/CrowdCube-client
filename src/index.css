@@ -55,7 +55,7 @@
     background-color: var(--fallback-n, oklch(var(--n) / var(--tw-bg-opacity)));
 } */
 .inactive {
-    color: #0f4400;
+    /* color: #0f4400; */
     text-decoration: none;
 }
 
@@ -68,8 +68,8 @@
 
 .active {
     color: rgb(250, 250, 250);
-    text-decoration: none;
-    background-color: #f5c30d;
+    /* text-decoration: none; */
+    /* background-color: #f5c30d; */
 }
 
 
