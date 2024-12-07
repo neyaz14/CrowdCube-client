@@ -1,0 +1,118 @@
+.cta-container {
+    background-color: #002c23; /* Dark green background */
+    color:#ff9719; /* White text */
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 10px;
+  }
+  
+  .cta-subtitle {
+    font-size: 18px;
+    color: #ffa500; /* Orange text */
+    margin-bottom: 10px;
+  }
+  
+  .cta-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .cta-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .cta-input {
+    width: 250px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    padding: 0 15px;
+    font-size: 16px;
+    color: #e4e2df;
+    background: linear-gradient(to right, #004d40, #003a33d4); /* Gradient background */
+  }
+  
+
+.running-camp-card-bg{
+  background:  #007366f0;
+  color: #ffa500;
+}
+.running-camp-card-bg-hover:hover{
+  background: linear-gradient(to right, #00937a, #00342efd);
+  /* transition: 2s; */
+  color:#f49016;
+  /* font-weight: 500; */
+}
+.running-camp-card-btn{
+  background:#f8a541  ;
+  color: #007769;
+}
+.running-camp-card-btn-hover:hover{
+  background: linear-gradient(to right, #ffba66, #ff8e04);
+  color: #00453d;
+  font-weight: 500;
+}
+
+
+  .cta-input::placeholder {
+    color: #c4c4c4; /* Placeholder text color */
+  }
+
+  .cta-select{
+    background-color: #fe9b22be;
+    color: #002c23;
+    font-weight: 600;
+  }
+  .cta-select-hover:hover{
+    background-color: #005a4e;
+    color: #ff8c00;
+  }
+  
+  .cta-button {
+    width: 250px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #002c23;
+    background-color: #f4a30b; /* Yellow button background */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #ff8c00; /* Darker yellow on hover */
+  }
+  
+
+
+
+
+  .cta-textarea {
+    width: 100%;
+    height: 100px;
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 16px;
+    color: #ffffff;
+    background: linear-gradient(to right, #004d40, #005a4e);
+    resize: none;
+  }
+  
+  .cta-textarea::placeholder {
+    color: #c4c4c4;
+    /* font-size: 16px; */
+  
+  }
+  
+  .read-only {
+    background-color: #006450; /* Match container background */
+    color:#f4b032;
+    cursor: not-allowed;
+  }

@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+.text-deep-green {
+    color: rgb(18, 47, 42);
+}
+
+.bg-deep-green {
+    background-color: rgb(18, 47, 42);
+}
+
+.bg-light-green {
+    background-color: #1A685B;
+}
+
+.bg-light-green-hover:hover {
+    background-color: #1A685B;
+}
+
+.text-light-green {
+    color: #1A685B;
+}
+
+.text-light-green-hover:hover {
+    color: #1A685B;
+}
+
+.bg-orange {
+    background-color: #FFAC00;
+}
+
+.text-orange {
+    color: #FFAC00;
+}
+
+.text-orange-hover:hover {
+    color: #FFAC00;
+}
+
+.bg-orange-hover:hover {
+    background-color: #FFAC00;
+}
+
+
+
+.active {
+    background-color: rgb(234 179 8);
+}
+
+/* *{
+    background-color: var(--fallback-n, oklch(var(--n) / var(--tw-bg-opacity)));
+} */
+.inactive {
+    color: #0f4400;
+    text-decoration: none;
+}
+
+
+/* Style.sidebar ul li :glogal(.active){
+    color: rgb(250, 250, 250);
+    text-decoration: none;
+    background-color: #f5c30d;
+} */
+
+.active {
+    color: rgb(250, 250, 250);
+    text-decoration: none;
+    background-color: #f5c30d;
+}
+
+
+.user-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
