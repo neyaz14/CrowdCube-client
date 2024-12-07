@@ -8,11 +8,14 @@ import Swal from 'sweetalert2'
 const Register = () => {
 
     const [msg, setmsg] = useState('');
-
     const [showpw, setshowpw] = useState(false);
     const navigate = useNavigate();
     const { register, googleRegister, setCurrentUser, Currentuser, updateUserProfile, setloading } = useContext(AuthContext);
-
+    
+    // const [registeredID, setregisteredID] = useState(Currentuser);
+    // console.log(registeredID);
+    // console.log(Currentuser);
+    // console.log(setCurrentUser)
 
 
     const handleRegister = e => {
@@ -35,58 +38,66 @@ const Register = () => {
         register(email, password)
             .then(res => {
                 const newRegisteredUser = res.user;
-                setCurrentUser(newRegisteredUser);
 
+                // setregisteredID(newRegisteredUser);
                 updateUserProfile({ displayName: name, photoURL: photoURL })
-                    .then(() => { setloading(false) })
-                    .catch(err => { setmsg(err.message) })
-
-
-
-
-
+                .then((res) => {
+                    // res.json()
+                    // navigate('/')
+                }).catch(err => setmsg(err.message))
+                setCurrentUser(newRegisteredUser);
+                
                 const createdtime = res.user.metadata.creationTime;
                 const newUser = { name, email, photoURL, createdtime };
 
+                // Save the new user to the database
                 fetch('http://localhost:5000/users', {
                     method: 'POST',
                     headers: {
-                        'content-type': 'application/json'
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(newUser)
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
+                        console.log(data);
+                        if (data.acknowledged) {
+                            Swal.fire({
+                                position: "center",
+                                icon: "success",
+                                title: "You have successfully registered",
+                                timer: 1500,
+                                background: '#FEFCE8',
+                                color: '#FFAC00',
+                                showConfirmButton: false,
+                                showClass: {
+                                    popup: `
+                                        animate__animated
+                                        animate__fadeInUp
+                                        animate__faster
+                                    `
+                                },
+                                hideClass: {
+                                    popup: `
+                                        animate__animated
+                                        animate__fadeOutDown
+                                        animate__faster
+                                    `
+                                }
+                            });
+
+
+                        }
                     })
-                Swal.fire({
-                    position: "center",
-                    icon: "success",
-                    title: "You have successfully registered",
-                    timer: 1500,
-                    background: '#FEFCE8', // Light grey background
-                    color: '#FFAC00', // Text color
-                    showConfirmButton: false,
-                    showClass: {
-                        popup: `
-                              animate__animated
-                              animate__fadeInUp
-                              animate__faster
-                            `
-                    },
-                    hideClass: {
-                        popup: `
-                              animate__animated
-                              animate__fadeOutDown
-                              animate__faster
-                            `
-                    }
-                });
-                // setCurrentUser(Currentuser);
+                
+
+
+
+
+
+
                 e.target.reset();
-                navigate('/login');
-
-
+                // navigate('/login');
             })
 
             .catch(err => {

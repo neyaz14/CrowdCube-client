@@ -32,7 +32,7 @@ const AuthProvider = ({children}) => {
     }
 
     const updateUserProfile=(updateData)=>{
-        setloading(true);
+        
         return updateProfile(auth.currentUser, updateData);
     }
 
@@ -40,7 +40,7 @@ const AuthProvider = ({children}) => {
 
     useEffect(()=>{
         const loginUser = onAuthStateChanged(auth, Currentuser=>{
-            // console.log('current user', Currentuser);
+           
             setCurrentUser(Currentuser);
             setloading(false);
         })

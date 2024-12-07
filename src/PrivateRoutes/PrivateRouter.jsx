@@ -10,7 +10,7 @@ const PrivateRouter = ({children}) => {
     if(loading){
         return <span className="loading loading-ball loading-lg"></span>
     }
-    else if(Currentuser){
+    else if(currentloggedInUser){
         return children;
     }
     return (
