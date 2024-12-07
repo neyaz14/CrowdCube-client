@@ -4,76 +4,108 @@ import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const CardDetails = () => {
-    const {currentloggedInUser, Currentuser} = useContext(AuthContext);
+    const { currentloggedInUser, Currentuser } = useContext(AuthContext);
     const allCampaign = useLoaderData();
     console.log(currentloggedInUser, Currentuser);
- 
-    const { id} = useParams();
+
+    const { id } = useParams();
     // console.log(id)
 
     const campaign = allCampaign.find(campaign => campaign._id.toString() == id)
     const {
-        _id,email,name,thumbnail,title, type,minDonation,description,deadline,
+        _id, email, name, thumbnail, title, type, minDonation, description, deadline,
     } = campaign;
     // console.log(campaign)
     // console.log(name, email, title, deadline)
 
     // console.log(Currentuser);
     // const userName = currentloggedInUser.displayName;
-    
+
     // const userEmail = Currentuser.email;
-   
+
     // const newDonation = {campaignID:_id,campaignEmail: email,campaignName: name,thumbnail,title, type,minDonation,description,deadline, userEmail, userName};
     // console.log(newDonation)
 
-    const handleSendDonation = ()=>{
-        const donarName = Currentuser.displayName;
-        const donarEmail = Currentuser.email ;
-        console.log(donarEmail, donarName)
-        const newDonation = {campaignID:_id,organizerEmail: email,organizerName: name,thumbnail,title, type,minDonation,description,deadline,donarEmail, donarName};
-
-        console.log(newDonation)
-        fetch('http://localhost:5000/userDonation',{
-            method:'POST',
-            headers:{
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(newDonation)
-        }).then(res => res.json())
-        .then(data => {
-            console.log(data)
-            // setCurrentUser(newUser);
+    const handleSendDonation = () => {
+        const currentDate = new Date();
+        const deadlinedate = deadline;
+        const deadlineDATE = new Date(deadlinedate);
+        if (currentDate > deadlineDATE) {
             Swal.fire({
                 position: "center",
-                icon: "success",
-                title: "You have successfully Donated",
+                icon: "error",
+                title: "Date is over to donate",
                 timer: 1600,
                 background: '#FEFCE8', // Light grey background
                 color: '#FFAC00', // Text color
                 showConfirmButton: false,
                 showClass: {
                     popup: `
+              animate__animated
+              animate__fadeInUp
+              animate__faster
+            `
+                },
+                hideClass: {
+                    popup: `
+              animate__animated
+              animate__fadeOutDown
+              animate__faster
+            `
+                }
+            });
+            return;
+        } else {
+            const donarName = Currentuser.displayName;
+            const donarEmail = Currentuser.email;
+            console.log(donarEmail, donarName)
+            const newDonation = { campaignID: _id, organizerEmail: email, organizerName: name, thumbnail, title, type, minDonation, description, deadline, donarEmail, donarName };
+
+            console.log(newDonation)
+            fetch('http://localhost:5000/userDonation', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(newDonation)
+            }).then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    // setCurrentUser(newUser);
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "You have successfully Donated",
+                        timer: 1600,
+                        background: '#FEFCE8', // Light grey background
+                        color: '#FFAC00', // Text color
+                        showConfirmButton: false,
+                        showClass: {
+                            popup: `
                       animate__animated
                       animate__fadeInUp
                       animate__faster
                     `
-                },
-                hideClass: {
-                    popup: `
+                        },
+                        hideClass: {
+                            popup: `
                       animate__animated
                       animate__fadeOutDown
                       animate__faster
                     `
-                }
-            });
+                        }
+                    });
 
-        })
+                })
+
+        }
+
     }
     return (
         <div className='w-11/12 mx-auto'>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left side */}
+                {/* Left side */}
                 <div className="col-span-2 space-y-4 max-w-4xl mx-auto running-camp-card-bg running-camp-card-bg-hover rounded-lg shadow-md border border-gray-200 p-6">
                     {/* Main Content */}
                     <div>
@@ -115,7 +147,7 @@ const CardDetails = () => {
 
 
 
-        {/* right sides */}
+                {/* right sides */}
                 <div className='col-span-1 space-y-10'>
                     <div className="col-span-1 lg:col-span-1 text-center bg-gray-50 rounded-lg p-4">
                         <div className="flex flex-col items-center space-y-3">
@@ -126,7 +158,7 @@ const CardDetails = () => {
                             />
                             <h3 className="text-lg font-semibold text-gray-800">{name}</h3>
                             <p className="text-sm text-gray-600">{email}</p>
-                            
+
                         </div>
                     </div>
 
@@ -155,9 +187,9 @@ const CardDetails = () => {
                             How Your Donation Makes A Difference
                         </h3>
                         {/* Button */}
-                        <button 
-                        onClick={handleSendDonation}
-                        className="mt-4 px-6 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700">
+                        <button
+                            onClick={handleSendDonation}
+                            className="mt-4 px-6 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700">
                             Donate ${minDonation}
                         </button>
                     </div>
