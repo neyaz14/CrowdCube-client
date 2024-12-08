@@ -8,6 +8,8 @@ const RunningCompaigns = ({ AllCampaignLink }) => {
 
 
     const avilableCamp = AllCampaignLink.filter(camp=> currentDate < new Date(camp.deadline)  )
+    const camplength = avilableCamp.length;
+    console.log(camplength)
  
 
     return (
