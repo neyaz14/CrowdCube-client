@@ -23,37 +23,37 @@ const Router = createBrowserRouter([
         {
             path: '/',
             element: <HomePage></HomePage>,
-            loader: ()=>fetch('http://localhost:5000/campaign')
+            loader: ()=>fetch(' https://crowdcube-server-site-sigma.vercel.app/campaign')
         },{
             path: '/allCampaign',
             element: <AllCampaign></AllCampaign>,
-            loader: ()=>fetch('http://localhost:5000/campaign')
+            loader: ()=>fetch(' https://crowdcube-server-site-sigma.vercel.app/campaign')
         },{
             path: '/addNewCampaign',
             element: <PrivateRouter><AddNewCampaign></AddNewCampaign></PrivateRouter>
         },{
             path: '/myCampaign',
             element: <PrivateRouter><MyCampaign></MyCampaign></PrivateRouter>,
-            loader: ()=>fetch('http://localhost:5000/campaign')
+            loader: ()=>fetch(' https://crowdcube-server-site-sigma.vercel.app/campaign')
         },{
             path: '/myDonations',
             element: <PrivateRouter><MyDonations></MyDonations></PrivateRouter>,
-            loader:()=>  fetch('http://localhost:5000/userDonation')
+            loader:()=>  fetch(' https://crowdcube-server-site-sigma.vercel.app/userDonation')
         },{
             path: '/login',
             element: <Login></Login>,
-            loader: ()=> fetch('http://localhost:5000/users')
+            loader: ()=> fetch(' https://crowdcube-server-site-sigma.vercel.app/users')
         },{
             path: '/register',
             element: <Register></Register>
         },{
             path: '/cardDetails/:id',
             element: <PrivateRouter><CardDetails></CardDetails></PrivateRouter> ,
-            loader: ()=>fetch('http://localhost:5000/campaign')
+            loader: ()=>fetch(' https://crowdcube-server-site-sigma.vercel.app/campaign')
         },{
             path: 'updateCamp/:id',
             element:<PrivateRouter> <UpdateCamp></UpdateCamp></PrivateRouter>,
-            loader: ()=>fetch(`http://localhost:5000/campaign`)
+            loader: ()=>fetch(` https://crowdcube-server-site-sigma.vercel.app/campaign`)
         }
       ]
     },

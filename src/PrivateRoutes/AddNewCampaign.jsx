@@ -30,7 +30,7 @@ const AddNewCampaign = () => {
         // alert("Campaign Added Successfully!");
 
 
-        fetch('http://localhost:5000/campaign', {
+        fetch(' https://crowdcube-server-site-sigma.vercel.app/campaign', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -38,7 +38,7 @@ const AddNewCampaign = () => {
             body: JSON.stringify(addedCampaignInfo)
         }).then(res => res.json())
         .then(data =>{
-            console.log(data)
+            // console.log(data)
             Swal.fire({
                 position: "center",
                 icon: "success",

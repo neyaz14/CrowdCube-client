@@ -13,10 +13,10 @@ import Swal from 'sweetalert2';
 const Login = () => {
     const [showpw, setshowpw] = useState(false);
     const [msg, setmsg] = useState();
-    const { login , googleRegister,updateUserProfile,Currentuser, currentloggedInUser,setCurrentUser} = useContext(AuthContext);
+    const { login, googleRegister, updateUserProfile, Currentuser, currentloggedInUser, setCurrentUser } = useContext(AuthContext);
 
     const allUsers = useLoaderData();
-    console.log(allUsers);
+    // console.log(allUsers);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -29,7 +29,7 @@ const Login = () => {
         const password = e.target.password.value;
         login(email, password)
             .then(res => {
-                
+
                 Swal.fire({
                     position: "center",
                     icon: "success",
@@ -54,13 +54,13 @@ const Login = () => {
                     }
                 });
 
-                  e.target.reset();
-                  navigate(location?.state ? location.state : "/")
+                e.target.reset();
+                navigate(location?.state ? location.state : "/")
 
 
             })
             .catch(err => {
-                console.log(err.message);
+                // console.log(err.message);
                 setmsg(err.message);
                 Swal.fire({
                     position: "center",
@@ -90,70 +90,129 @@ const Login = () => {
 
     }
 
-    
-    const handleLoginGOOGLE = ()=>{
+
+    const handleLoginGOOGLE = () => {
         setmsg('');
-        
+
         googleRegister()
-        .then(res => {
-            const newRegisteredUser = res.user;
-         
+            .then(res => {
+                const newRegisteredUser = res.user;
+                const allemail = allUsers.find(allready => newRegisteredUser.email == allready.email)
+                // console.log(allemail);
+                // if(newRegisteredUser.email == )
+                if (!allemail) {
+                    updateUserProfile({ displayName: res.user.displayName, photoURL: res.user.photoURL });
+
+                    const name = newRegisteredUser.displayName;
+                    const email = newRegisteredUser.email;
+                    const photoURL = newRegisteredUser.photoURL;
+                    const createdtime = res.user.metadata.creationTime;
+
+                    const newUser = { name, email, photoURL, createdtime };
+
+                    fetch(' https://crowdcube-server-site-sigma.vercel.app/users', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(newUser)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            // console.log(data)
+
+                        })
 
 
-            Swal.fire({
-                position: "center",
-                icon: "success",
-                title: "You have successfully registered by Google",
-                timer: 1500,
-                background: '#FEFCE8', // Light grey background
-                color: '#FFAC00', // Text color
-                showConfirmButton: false,
-                showClass: {
-                    popup: `
+
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "You have successfully registered by Google and logged in",
+                        timer: 1500,
+                        background: '#FEFCE8', // Light grey background
+                        color: '#FFAC00', // Text color
+                        showConfirmButton: false,
+                        showClass: {
+                            popup: `
                   animate__animated
                   animate__fadeInUp
                   animate__faster
                 `
-                },
-                hideClass: {
-                    popup: `
+                        },
+                        hideClass: {
+                            popup: `
                   animate__animated
                   animate__fadeOutDown
                   animate__faster
                 `
-                }
-            });
-            navigate(location?.state ? location.state : "/")
-            //   e.target.reset();
+                        }
+                    });
+                    //   e.target.reset();
+                    navigate(location?.state ? location.state : "/")
 
-        })
-        .catch(err => {
-            console.log(err.message);
-            setmsg(err.message);
-            Swal.fire({
-                position: "center",
-                icon: "error",
-                title: `${err.message}`,
-                timer: 1500,
-                background: '#FEFCE8', // Light grey background
-                color: '#f72c47', // Text color
-                showConfirmButton: false,
-                showClass: {
-                    popup: `
+
+                }
+                else{
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "You have successfully registered by Google",
+                        timer: 1500,
+                        background: '#FEFCE8', // Light grey background
+                        color: '#FFAC00', // Text color
+                        showConfirmButton: false,
+                        showClass: {
+                            popup: `
+                      animate__animated
+                      animate__fadeInUp
+                      animate__faster
+                    `
+                        },
+                        hideClass: {
+                            popup: `
+                      animate__animated
+                      animate__fadeOutDown
+                      animate__faster
+                    `
+                        }
+                    });
+                }
+
+
+
+               
+
+                //   e.target.reset();
+
+            })
+            .catch(err => {
+                // console.log(err.message);
+                setmsg(err.message);
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: `${err.message}`,
+                    timer: 1500,
+                    background: '#FEFCE8', // Light grey background
+                    color: '#f72c47', // Text color
+                    showConfirmButton: false,
+                    showClass: {
+                        popup: `
                   animate__animated
                   animate__fadeInUp
                   animate__faster
                 `
-                },
-                hideClass: {
-                    popup: `
+                    },
+                    hideClass: {
+                        popup: `
                   animate__animated
                   animate__fadeOutDown
                   animate__faster
                 `
-                }
-            });
-        })
+                    }
+                });
+            })
 
     }
 

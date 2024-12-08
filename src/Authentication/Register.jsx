@@ -51,7 +51,7 @@ const Register = () => {
                 const newUser = { name, email, photoURL, createdtime };
 
                 // Save the new user to the database
-                fetch('http://localhost:5000/users', {
+                fetch(' https://crowdcube-server-site-sigma.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -60,7 +60,7 @@ const Register = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        // console.log(data);
                         if (data.acknowledged) {
                             Swal.fire({
                                 position: "center",
@@ -101,7 +101,7 @@ const Register = () => {
             })
 
             .catch(err => {
-                console.log(err.message);
+                // console.log(err.message);
                 setmsg(err.message);
                 Swal.fire({
                     position: "center",
@@ -149,9 +149,7 @@ const Register = () => {
                 const newRegisteredUser = res.user;
                 // console.log(res.user.displayName, res.user.photoURL)
                 updateUserProfile({ displayName: res.user.displayName, photoURL: res.user.photoURL });
-                // setCurrentUser(newRegisteredUser);
-                // console.log(newRegisteredUser);
-                // console.log(Currentuser)
+               
                 const name = newRegisteredUser.displayName;
                 const email = newRegisteredUser.email;
                 const photoURL = newRegisteredUser.photoURL;
@@ -159,7 +157,7 @@ const Register = () => {
 
                 const newUser = { name, email, photoURL, createdtime };
 
-                fetch('http://localhost:5000/users', {
+                fetch(' https://crowdcube-server-site-sigma.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -168,7 +166,7 @@ const Register = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
+                        // console.log(data)
 
                     })
 
@@ -201,8 +199,11 @@ const Register = () => {
                 navigate('/login');
 
             })
+
+
+// ------------------------------------------------------------------------- 
             .catch(err => {
-                console.log(err.message);
+                // console.log(err.message);
                 setmsg(err.message);
                 Swal.fire({
                     position: "center",

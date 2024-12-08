@@ -5,7 +5,7 @@ const Banner = () => {
     return (
         <div>
 
-            <div className="carousel w-full">
+            {/* <div className="carousel w-full">
                 <div id="item1" className="carousel-item w-full">
                     <img
                         src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
@@ -32,7 +32,7 @@ const Banner = () => {
                 <a href="#item2" className="btn btn-xs">2</a>
                 <a href="#item3" className="btn btn-xs">3</a>
                 <a href="#item4" className="btn btn-xs">4</a>
-            </div>
+            </div> */}
 
         </div>
     );

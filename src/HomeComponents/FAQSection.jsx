@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import FAQ from '../assets/faq.png'
 const FAQSection = () => {
   const [open, setOpen] = useState(null);
 
@@ -26,14 +26,12 @@ const FAQSection = () => {
   ];
 
   return (
-    <div className="bg-gray-100 min-h-screen p-6 md:p-12">
+    <div className=" min-h-screen p-6 md:p-12">
       <div className="flex flex-col md:flex-row items-center justify-between">
         {/* FAQ Section (Left) */}
         <div className="md:w-1/2 md:pr-8">
-          <h3 className="text-yellow-500 font-semibold text-lg">
-            Frequently Asked Questions
-          </h3>
-          <h2 className="text-gray-800 text-3xl font-bold mt-2 mb-6">
+          
+          <h2 className="text-gray-400 text-4xl font-bold mt-2 mb-6">
             Have Any Questions For Us?
           </h2>
 
@@ -74,7 +72,7 @@ const FAQSection = () => {
         {/* Image Section (Right) */}
         <div className="md:w-1/2 mt-8 md:mt-0">
           <img
-            src="https://via.placeholder.com/400"
+            src={FAQ}
             alt="Elderly Woman and Child"
             className="rounded-lg w-full object-cover"
           />

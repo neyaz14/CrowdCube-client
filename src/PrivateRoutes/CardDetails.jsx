@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 const CardDetails = () => {
     const { currentloggedInUser, Currentuser } = useContext(AuthContext);
     const allCampaign = useLoaderData();
-    console.log(currentloggedInUser, Currentuser);
+    // console.log(currentloggedInUser, Currentuser);
 
     const { id } = useParams();
     // console.log(id)
@@ -30,7 +30,7 @@ const CardDetails = () => {
         const currentDate = new Date();
         const deadlinedate = deadline;
         const deadlineDATE = new Date(deadlinedate);
-        if (currentDate > deadlineDATE) {
+        if (currentDate >= deadlineDATE) {
             Swal.fire({
                 position: "center",
                 icon: "error",
@@ -58,11 +58,11 @@ const CardDetails = () => {
         } else {
             const donarName = Currentuser.displayName;
             const donarEmail = Currentuser.email;
-            console.log(donarEmail, donarName)
+            // console.log(donarEmail, donarName)
             const newDonation = { campaignID: _id, organizerEmail: email, organizerName: name, thumbnail, title, type, minDonation, description, deadline, donarEmail, donarName };
 
-            console.log(newDonation)
-            fetch('http://localhost:5000/userDonation', {
+            // console.log(newDonation)
+            fetch(' https://crowdcube-server-site-sigma.vercel.app/userDonation', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -70,7 +70,7 @@ const CardDetails = () => {
                 body: JSON.stringify(newDonation)
             }).then(res => res.json())
                 .then(data => {
-                    console.log(data)
+                    // console.log(data)
                     // setCurrentUser(newUser);
                     Swal.fire({
                         position: "center",

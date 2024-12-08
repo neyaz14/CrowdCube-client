@@ -20,7 +20,7 @@ const MyCampTable = ({ myCamp, setStateAllCampaigns, stateAllCampaigns, setmyCam
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/campaign/${id}`, {
+                fetch(` https://crowdcube-server-site-sigma.vercel.app/campaign/${id}`, {
                     method: 'Delete',
 
                 })

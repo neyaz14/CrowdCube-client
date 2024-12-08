@@ -1,10 +1,26 @@
 
 import { Link, NavLink } from 'react-router-dom';
 import { FaHandsHelping } from "react-icons/fa";
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 // import Style from 'index.css'
 const Navbar = () => {
+    const [theme, setTheme] = useState(
+        localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+    );
+    const handleToggle = (e) => {
+        if (e.target.checked) {
+            setTheme("dark");
+        } else {
+            setTheme("light");
+        }
+    };
+    useEffect(() => {
+        localStorage.setItem("theme", theme);
+        const localTheme = localStorage.getItem("theme");
+        // add custom data-theme attribute to html tag required to update theme using DaisyUI
+        document.querySelector("html").setAttribute("data-theme", localTheme);
+    }, [theme]);
 
     const { Currentuser, singOut, currentloggedInUser } = useContext(AuthContext);
 
@@ -14,6 +30,7 @@ const Navbar = () => {
         <li><NavLink to='/addNewCampaign' className="inactive" activeClassName="active">Add New Campaign</NavLink></li>
         <li><NavLink to='/myCampaign' className="inactive" activeClassName="active">My Campaign</NavLink></li>
         <li><NavLink to='/myDonations' className="inactive" activeClassName="active">My Donations</NavLink></li>
+
     </>
 
 
@@ -76,12 +93,15 @@ const Navbar = () => {
 
             </div>
 
-            <div className='border w-60 h-16 justify-between flex'>
+            <div className=' w-60 h-16 justify-between flex'>
                 {/* <p>{currentloggedInUser?.displayName}</p> */}
 
                 {/* <figure><img  className='w-12' src={`currentloggedInUser?.photoURL,''s Profile Pic'`} alt={currentloggedInUser?.displayName} /></figure> */}
 
-                <div>
+                <div  className='flex justify-between gap-3'>
+                    <div>
+                        <input type="checkbox" onChange={handleToggle} value="synthwave" className="toggle theme-controller" />
+                    </div>
                     {
                         Currentuser ?
 
