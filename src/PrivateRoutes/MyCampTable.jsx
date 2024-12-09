@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-const MyCampTable = ({ myCamp, setStateAllCampaigns, stateAllCampaigns, setmyCampState, myCampState }) => {
+const MyCampTable = ({ myCamp, setStateAllCampaigns, stateAllCampaigns, setmyCampState, myCampState, idx }) => {
 
     const navigate = useNavigate();
     const { _id, email, name, thumbnail, title, type, minDonation, description, deadline } = myCamp;
@@ -60,31 +60,33 @@ const MyCampTable = ({ myCamp, setStateAllCampaigns, stateAllCampaigns, setmyCam
                 <table className="table md:table-sm table-xs">
                     <tbody>
                         <tr>
-                            <th className='border border-yellow-400 text-emerald-900 md:font-semibold md:text-[16px] overflow-hidden max-w-3'>1</th>
+                            <th className='border border-base-300 text-sky-500 md:font-semibold md:text-[16px] overflow-hidden max-w-3'>{idx + 1}</th>
 
-                            <td className='border border-yellow-400 text-emerald-900 md:font-semibold md:text-[16px] overflow-hidden max-w-7'>{name}</td>
+                            <td className='border border-base-300 text-sky-500 md:font-semibold md:text-[16px] overflow-hidden max-w-7'>{name}</td>
 
-                            <td className='hidden border border-yellow-400 text-emerald-900 md:font-semibold md:text-[16px] overflow-hidden max-w-7'>{email}</td>
+                            <td className='hidden border border-base-300 text-sky-500 md:font-semibold md:text-[16px] overflow-hidden max-w-7'>{email}</td>
 
-                            <td className='border border-yellow-400 text-emerald-900 md:font-semibold md:text-[16px] overflow-hidden max-w-7'>{title}</td>
-                            <td className='border border-yellow-400 text-emerald-900 md:font-semibold md:text-[16px] overflow-hidden max-w-7'>{type}</td>
+                            <td className='border border-base-300 text-sky-500 md:font-semibold md:text-[16px] overflow-hidden max-w-7'>{title}</td>
+                            <td className='border border-base-300 text-sky-500 md:font-semibold md:text-[16px] overflow-hidden max-w-7'>{type}</td>
 
-                            <td className='border border-yellow-400 text-emerald-900 md:font-semibold md:text-[16px] overflow-hidden max-w-7'>{deadline}</td>
-
-
-
-                            <td className='border border-yellow-400 text-emerald-900 md:font-semibold md:text-[16px] overflow-hidden max-w-7'>
-
-                                <button
-                                    // onClick={() => handleUpdate(_id)}
-                                    className='btn btn-xs bg-orange-300 text-emerald-950 font-semibold'> <Link to={`/updateCamp/${_id}`}>Update</Link></button>
+                            <td className='border border-base-300 text-sky-500 md:font-semibold md:text-[16px] overflow-hidden max-w-7'>{deadline}</td>
 
 
 
-                                <button
-                                    onClick={() => handleDelete(_id)}
-                                    className='btn btn-xs bg-orange-300 text-emerald-950 font-semibold'> Delete</button>
+                            <td className='border  border-base-300 text-sky-500 md:font-semibold md:text-[16px] overflow-hidden max-w-7'>
 
+                                <div className='flex md:flex-row flex-col md:justify-evenly'>
+                                    <button
+                                        // onClick={() => handleUpdate(_id)}
+                                        className='btn btn-xs bg-sky-200 text-sky-900 font-semibold'> <Link to={`/updateCamp/${_id}`}>Update</Link></button>
+
+
+
+                                    <button
+                                        onClick={() => handleDelete(_id)}
+                                        className='btn btn-xs bg-sky-200 text-emerald-950 font-semibold'> Delete</button>
+
+                                </div>
                             </td>
                         </tr>
                     </tbody>

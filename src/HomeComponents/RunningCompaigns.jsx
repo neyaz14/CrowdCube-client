@@ -21,7 +21,7 @@ const RunningCompaigns = ({ AllCampaignLink }) => {
                 </div>
                 
                 <Fade duration={2000} delay={500}>
-                <p className='text-5xl text-center  font-bold my-6'>All Runnig Campaigns</p>
+                <p className='text-5xl text-center  font-bold my-10'>All Runnig Campaigns</p>
                 </Fade>
             </div>
 

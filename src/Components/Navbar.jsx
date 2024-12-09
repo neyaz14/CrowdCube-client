@@ -45,7 +45,7 @@ const Navbar = () => {
 
             <div className="navbar-center">
                 <div className="dropdown z-50">
-                    <div tabIndex={0} role="button" className="btn rounded-full bg-emerald-700 lg:hidden">
+                    <div tabIndex={0} role="button" className="btn rounded-full bg-sky-200 text-base lg:hidden">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-6  w-6"
@@ -61,7 +61,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-yellow-500 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-sky-200 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                         {Links}
                     </ul>
                 </div>
@@ -98,53 +98,44 @@ const Navbar = () => {
 
                 {/* <figure><img  className='w-12' src={`currentloggedInUser?.photoURL,''s Profile Pic'`} alt={currentloggedInUser?.displayName} /></figure> */}
 
-                <div  className='flex justify-between gap-3'>
+                <div className='flex items-center justify-center gap-8'>
                     <div>
                         <input type="checkbox" onChange={handleToggle} value="synthwave" className="toggle theme-controller" />
                     </div>
-                    {
-                        Currentuser ?
+                    <div>
+                        {
+                            Currentuser ?
 
 
-                            // <div className="user-info">
-
-                            //     <img src={Currentuser?.photoURL} alt="User" title={Currentuser.displayName} className="user-photo" />
-
-                            //     <button
-                            //         onClick={handleSingOut}
-                            //         className='btn-sm btn-outline text-orange btn'>
-                            //         <NavLink to='/login'>LogOut</NavLink></button>
-
-                            // </div>
-
-                            <div className="flex items-center space-x-4">
-                                <div className="relative group">
-                                    <img
-                                        src={Currentuser?.photoURL}
-                                        alt="User"
-                                        className="w-10 h-10 rounded-full cursor-pointer"
-                                    />
-                                    <div className='absolute top-7 left-2 transform -translate-x-1/2 mt-2 hidden group-hover:block bg-gray-700 text-sm px-2 py-1 rounded shadow-lg'>
-                                        <span className="   text-white ">{Currentuser?.displayName}</span>
-                                        <button
-                                            onClick={handleSingOut}
-                                            className='btn-sm btn-outline text-orange btn'>
-                                            LogOut
-                                        </button>
+                                <div className="flex  space-x-4">
+                                    <div className="relative  cursor-pointer px-7 py-3 group">
+                                        <img
+                                            src={Currentuser?.photoURL}
+                                            alt="User"
+                                            className="w-14 h-14 rounded-full "
+                                        />
+                                        <div className='absolute hidden top-10  transform -translate-x-1/2 mt-2  group-hover:flex group-hover:gap-3 bg-gray-700 text-sm px-4 py-3 rounded shadow-lg'>
+                                            <span className="   text-white ">{Currentuser?.displayName}</span>
+                                            <button
+                                                onClick={handleSingOut}
+                                                className='btn-sm btn-outline text-sky-400 btn'>
+                                                LogOut
+                                            </button>
+                                        </div>
                                     </div>
+
                                 </div>
 
-                            </div>
 
 
 
-
-                            :
-                            <div className='flex md:flex-row flex-col md:space-x-3 '>
-                                <button className='bg-orange text-white font-semibold bg-light-green-hover btn'><Link to='/login'>Login</Link></button>
-                                <button className='bg-orange text-white font-semibold bg-light-green-hover btn'><Link to='/register'>Register</Link></button>
-                            </div>
-                    }
+                                :
+                                <div className='flex md:flex-row flex-col md:space-x-3 '>
+                                    <button className='bg-sky-300 hover:bg-sky-900 text-white font-semibold  btn'><Link to='/login'>Login</Link></button>
+                                    <button className='bg-sky-300 text-white font-semibold hover:bg-sky-900 btn'><Link to='/register'>Register</Link></button>
+                                </div>
+                        }
+                    </div>
 
 
                 </div>

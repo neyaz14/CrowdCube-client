@@ -218,14 +218,14 @@ const Login = () => {
 
     return (
         <div>
-            <div className="hero bg-orange min-h-screen " >
+            <div className="hero  min-h-screen " >
 
                 <div className="hero-content flex-col ">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-6xl mb-7 text-light-green font-bold">Login now!</h1>
+                        <h1 className="text-6xl mb-7 text-sky-600 font-bold">Login now!</h1>
 
                     </div>
-                    <div className="card bg-emerald-50 w-full shrink-0 shadow-2xl">
+                    <div className="card bg-sky-50 w-full shrink-0 shadow-2xl">
                         <form onSubmit={handlelogin} className="card-body">
                             <div className="form-control">
                                 <label className="label hover:font-medium ">
@@ -236,7 +236,7 @@ const Login = () => {
                                     name='email'
                                     type="email"
                                     placeholder="email"
-                                    className="input input-bordered border-green-950" required />
+                                    className="input input-bordered border-sky-950" required />
                             </div>
                             <div className="form-control relative">
                                 {/* pw toggle */}
@@ -253,7 +253,7 @@ const Login = () => {
                                     name='password'
                                     type={!showpw ? "password" : "text"}
                                     placeholder="password"
-                                    className="input border-green-950 input-bordered" required />
+                                    className="input border-sky-950 input-bordered" required />
                                 {/* forget pw */}
                                 {/* <label className="label">
                                     <p onClick={handleForgetPW} className="label-text-alt link link-hover">Forgot password?</p>
@@ -264,9 +264,9 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button
                                     // onClick={handleLoginbtn}
-                                    className="btn font-semibold text-xl bg-light-green text-orange bg-orange-hover text-light-green-hover">Login</button>
+                                    className="btn font-semibold text-xl text-sky-50 bg-sky-700 hover:text-sky-700 hover:bg-sky-100 hover:font-bold">Login</button>
                             </div>
-                            <div className='flex text-light-green font-semibold text-[16px] hover:font-semibold  justify-start'>
+                            <div className='flex text-sky-950 font-semibold text-[16px] hover:font-semibold  justify-start'>
                                 <p>New here ? <Link to='/register'>Register</Link></p>
                             </div>
                             <div>
@@ -282,7 +282,7 @@ const Login = () => {
                             {/* google */}
                             <button
                                 onClick={handleLoginGOOGLE}
-                                className='btn-wide btn font-bold text-xl bg-orange text-orange-hover bg-light-green-hover text-light-green hover:font-bold'> Login with Google </button>
+                                className='btn-wide btn font-bold text-xl text-sky-50 bg-sky-700 hover:text-sky-700 hover:bg-sky-100 hover:font-bold'> Login with Google </button>
                         </div>
 
                     </div>

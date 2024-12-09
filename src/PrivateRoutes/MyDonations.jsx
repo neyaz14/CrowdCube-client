@@ -14,7 +14,7 @@ const MyDonations = () => {
     return (
         <div className=' lg:w-11/12 mx-auto '>
             <div className='my-4'>
-                <h1 className='text-center text-5xl text-emerald-950 font-bold '>My Donation Details</h1>
+                <h1 className='text-center text-5xl text-sky-600 font-bold '>My Donation Details</h1>
             </div>
             <div className='grid md:grid-cols-2  grid-cols-1 justify-center items-start mx-auto mt-3'>
             {

@@ -5,10 +5,10 @@ import { FiPhone, FiMail } from "react-icons/fi";
 const Footer = () => {
     return (
         <div>
-            <div className="h-80">
+            <div className=" min-h-[calc(100vh-232px)]">
 
             </div>
-            <footer className="bg-[#072927] text-white py-10 px-6 md:px-16">
+            <footer className="bg-[#071629] text-white py-10 px-6 md:px-16">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     {/* About Section */}
                     <div>
@@ -22,7 +22,7 @@ const Footer = () => {
                                 <span className="text-sm text-gray-300">+163-3654-7896</span>
                             </div>
                             <div className="flex items-center space-x-3">
-                                <FiMail className="text-yellow-500 text-xl" />
+                                <FiMail className="text-sky-500 text-xl" />
                                 <span className="text-sm text-gray-300">info@donat.com</span>
                             </div>
                         </div>
@@ -34,7 +34,7 @@ const Footer = () => {
                         <ul className="space-y-2">
                             {["About Us", "Our News", "Our Campaign", "Privacy Policy", "Contact Us"].map(
                                 (link, index) => (
-                                    <li key={index} className="text-sm text-gray-300 hover:text-yellow-500 transition-colors">
+                                    <li key={index} className="text-sm text-gray-300 hover:text-sky-600 transition-colors">
                                         <a href="#" className="flex items-center space-x-2">
                                             <span>➤</span>
                                             <span>{link}</span>
@@ -56,7 +56,7 @@ const Footer = () => {
                                 "Health Support",
                                 "Our Campaign",
                             ].map((service, index) => (
-                                <li key={index} className="text-sm text-gray-300 hover:text-yellow-500 transition-colors">
+                                <li key={index} className="text-sm text-gray-300 hover:text-sky-600 transition-colors">
                                     <a href="#" className="flex items-center space-x-2">
                                         <span>➤</span>
                                         <span>{service}</span>
@@ -72,30 +72,30 @@ const Footer = () => {
                         <p className="text-sm text-gray-300 mb-4">
                             Subscribe to Our Newsletter. Regular inspection and feedback mechanisms.
                         </p>
-                        <div className="flex items-center bg-[#072927] border border-gray-600 rounded-lg p-2 mb-4">
+                        <div className="flex items-center bg-[#011a368a] border border-gray-600 rounded-lg p-2 mb-4">
                             <input
                                 type="email"
                                 placeholder="Enter your email"
                                 className="bg-transparent text-sm text-gray-300 flex-grow focus:outline-none"
                             />
-                            <button className="bg-yellow-500 text-white p-2 rounded-md hover:bg-yellow-600">
+                            <button className="bg-sky-500 text-white p-2 rounded-md hover:bg-yellow-600">
                                 <span>✉</span>
                             </button>
                         </div>
                         <div className="flex items-center space-x-4">
-                            <a href="#" className="text-gray-300 hover:text-yellow-500">
+                            <a href="#" className="text-gray-300 hover:text-sky-500">
                                 <FaFacebookF />
                             </a>
-                            <a href="#" className="text-gray-300 hover:text-yellow-500">
+                            <a href="#" className="text-gray-300 hover:text-sky-500">
                                 <FaTwitter />
                             </a>
-                            <a href="#" className="text-gray-300 hover:text-yellow-500">
+                            <a href="#" className="text-gray-300 hover:text-sky-500">
                                 <FaLinkedinIn />
                             </a>
-                            <a href="#" className="text-gray-300 hover:text-yellow-500">
+                            <a href="#" className="text-gray-300 hover:text-sky-500">
                                 <FaBehance />
                             </a>
-                            <a href="#" className="text-gray-300 hover:text-yellow-500">
+                            <a href="#" className="text-gray-300 hover:text-sky-500">
                                 <FaVimeoV />
                             </a>
                         </div>
@@ -105,7 +105,7 @@ const Footer = () => {
                 {/* Bottom Section */}
                 <div className="mt-10 border-t border-gray-600 pt-4 text-center text-sm text-gray-400">
                     Copyright 2024{" "}
-                    <span className="text-yellow-500 font-semibold">CrowdCube</span>. All Rights Reserved.
+                    <span className="text-sky-300 font-semibold">CrowdCube</span>. All Rights Reserved.
                 </div>
             </footer>
         </div>

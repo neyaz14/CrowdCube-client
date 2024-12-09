@@ -1,6 +1,6 @@
 .cta-container {
-    background-color: #002c23; /* Dark green background */
-    color:#ff9719; /* White text */
+    background-color: #0054c95a; /* Dark green background */
+    color:#001771; /* White text */
     text-align: center;
     padding: 50px 20px;
     border-radius: 10px;
@@ -8,7 +8,7 @@
   
   .cta-subtitle {
     font-size: 18px;
-    color: #ffa500; /* Orange text */
+    color: #001562; /* Orange text */
     margin-bottom: 10px;
   }
   
@@ -33,23 +33,23 @@
     padding: 0 15px;
     font-size: 16px;
     color: #e4e2df;
-    background: linear-gradient(to right, #004d40, #003a33d4); /* Gradient background */
+    background: linear-gradient(to right, #004773, #00263ad4); /* Gradient background */
   }
   
 
 .running-camp-card-bg{
-  background:  #007366f0;
+  background:  #004973f0;
   color: #ffa500;
 }
 .running-camp-card-bg-hover:hover{
-  background: linear-gradient(to right, #00937a, #00342efd);
+  background: linear-gradient(to right, #003893c2, #001934fd);
   /* transition: 2s; */
   color:#f49016;
   /* font-weight: 500; */
 }
 .running-camp-card-btn{
-  background:#f8a541  ;
-  color: #007769;
+  background:#41acf8  ;
+  color: #0a4b9a;
 }
 .running-camp-card-btn-hover:hover{
   background: linear-gradient(to right, #ffba66, #ff8e04);
@@ -64,7 +64,7 @@
 
   .cta-select{
     background-color: #fe9b22be;
-    color: #002c23;
+    color: #00122c;
     font-weight: 600;
   }
   .cta-select-hover:hover{
@@ -79,14 +79,15 @@
     border-radius: 20px;
     font-size: 16px;
     font-weight: bold;
-    color: #002c23;
-    background-color: #f4a30b; /* Yellow button background */
+    color: #bcd5ff;
+    background-color: #002655; /* Yellow button background */
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   .cta-button:hover {
-    background-color: #ff8c00; /* Darker yellow on hover */
+    background-color: #00428e8c; /* Darker yellow on hover */
+    color: #001a47;
   }
   
 
@@ -101,18 +102,19 @@
     padding: 15px;
     font-size: 16px;
     color: #ffffff;
-    background: linear-gradient(to right, #004d40, #005a4e);
+    background: linear-gradient(to right, #0058b1d2, #002576);
     resize: none;
   }
   
   .cta-textarea::placeholder {
-    color: #c4c4c4;
+    color: #ffffff;
     /* font-size: 16px; */
   
   }
   
   .read-only {
-    background-color: #006450; /* Match container background */
-    color:#f4b032;
+    background-color: #003464; /* Match container background */
+    color:#cbebff;
     cursor: not-allowed;
+    font-weight: 600;
   }

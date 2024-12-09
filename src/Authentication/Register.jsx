@@ -237,12 +237,12 @@ const Register = () => {
 
     return (
         <div>
-            <div className="hero  min-h-screen bg-light-green">
+            <div className="hero  min-h-screen ">
                 <div className="hero-content flex-col ">
                     <div className="text-center lg:text-left ">
-                        <h1 className="text-5xl text-orange mb-7 font-bold">Register Here</h1>
+                        <h1 className="text-5xl text-sky-500 mb-7 font-bold">Register Here</h1>
                     </div>
-                    <div className="card bg-yellow-50 w-full  shrink-0 shadow-2xl ">
+                    <div className="card bg-sky-50 w-full  shrink-0 shadow-2xl ">
                         <form onSubmit={handleRegister} className="card-body w-[400px]">
                             <div className="form-control my-1">
                                 <label className="label">
@@ -253,7 +253,7 @@ const Register = () => {
                                     name='name'
                                     type="text"
                                     placeholder="Name"
-                                    className="input bg-yellow-50  input-bordered" required />
+                                    className="input   input-bordered" required />
                             </div>
 
                             <div className="form-control my-1">
@@ -266,7 +266,7 @@ const Register = () => {
                                     name='photo'
                                     type="text"
                                     placeholder="Photo URL"
-                                    className="input bg-yellow-50 input-bordered" required />
+                                    className="input  input-bordered" required />
                             </div>
 
                             <div className="form-control">
@@ -278,7 +278,7 @@ const Register = () => {
                                     name='email'
                                     type="email"
                                     placeholder="email"
-                                    className="input bg-yellow-50  input-bordered" required />
+                                    className="input  input-bordered" required />
                             </div>
                             <div className="form-control relative">
 
@@ -298,10 +298,10 @@ const Register = () => {
                             <div className="form-control mt-6">
                                 <button
                                     // onClick={handleRegisterbtn}
-                                    className=" btn font-semibold text-xl bg-light-green text-orange bg-orange-hover text-light-green-hover hover:font-bold">
+                                    className=" btn font-semibold text-xl text-sky-50 bg-sky-700 hover:text-sky-700 hover:bg-sky-100 hover:font-bold">
                                     Register</button>
                             </div>
-                            <div className='flex mt-4 text-light-green font-bold  justify-start'>
+                            <div className='flex mt-4 text-sky-900 font-bold  justify-start'>
                                 <p>Allready have an account? <Link to='/login'>Login</Link></p>
                             </div>
                             <div>
@@ -318,7 +318,7 @@ const Register = () => {
                             {/* google */}
                             <button
                                 onClick={handleRegisterGOOGLE}
-                                className='btn-wide btn font-bold text-xl bg-orange text-orange-hover bg-light-green-hover text-light-green hover:font-bold'> Register with Google </button>
+                                className='btn-wide btn font-bold text-xl text-sky-50 bg-sky-700 hover:text-sky-700 hover:bg-sky-100 hover:font-bold'> Register with Google </button>
                         </div>
                     </div>
                 </div>

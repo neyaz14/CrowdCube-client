@@ -14,8 +14,8 @@ const MyDonaDetailsCard = ({details}) => {
                         alt={title} />
                 </figure>
                 <div className="card-body">
-                    <h2 className="card-title text-yellow-500 text-3xl">{title}</h2>
-                    <p className='opacity-80 h-10 overflow-hidden text-yellow-300 font-semibold '>Campaign Details: {description}</p>
+                    <h2 className="card-title text-sky-400 text-3xl">{title}</h2>
+                    <p className='opacity-80 h-10 overflow-hidden text-sky-200 font-semibold '>Campaign Details: {description}</p>
                   
                     <div className=' bg-transparent opacity-70 font-bold  text-white  '>
                         <p className='opacity-90'>Donar info :</p>

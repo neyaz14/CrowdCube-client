@@ -78,7 +78,7 @@ const AddNewCampaign = () => {
 
 
             <div className="cta-container mx-auto">
-                <h1 className="cta-title">Add New Campaign</h1>
+                <h1 className="text-sky-600 font-bold text-4xl my-2">Add New Campaign</h1>
                 <form onSubmit={handleSubmit} className="campaign-form space-y-6 space-x-3 ">
                     <input
                         type="url"
