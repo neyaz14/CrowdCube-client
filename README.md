@@ -1,8 +1,18 @@
-# React + Vite
+Project Name : CrowdCube 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Project Description : Its a full stack website which is made for other people who wants to run a campaign to raise funds from crowd. 
 
-Currently, two official plugins are available:
+Some Features : 1. Firebase based authenticatin process including google login 
+                2. All the info of cmapaign , users, and their donations is stored in mongoDB
+                3.Dark and light mood 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Technology    : 1. HTML , CSS , Tailwind, Daisy UI
+                2. React JS, Mongodb, firebase
+
+Live Link of website    : https://crowdcube-ac233.web.app/ 
+
+Client site github repo : https://github.com/programming-hero-web-course2/b10-a10-client-side-neyaz14 
+
+Server site gihub repo  : https://github.com/programming-hero-web-course2/b10-a10-server-side-neyaz14
+
+
