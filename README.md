@@ -11,7 +11,7 @@ Technology    : 1. HTML , CSS , Tailwind, Daisy UI
 
 Live Link of website    : https://crowdcube-ac233.web.app/ 
 
-Client site github repo : https://github.com/programming-hero-web-course2/b10-a10-client-side-neyaz14 
+
 
 Server site gihub repo  : https://github.com/programming-hero-web-course2/b10-a10-server-side-neyaz14
 
