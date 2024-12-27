@@ -126,9 +126,6 @@ const Navbar = () => {
 
                                 </div>
 
-
-
-
                                 :
                                 <div className='flex md:flex-row flex-col md:space-x-3 '>
                                     <button className='bg-sky-300 hover:bg-sky-900 text-white font-semibold  btn'><Link to='/login'>Login</Link></button>

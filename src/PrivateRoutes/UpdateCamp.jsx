@@ -28,7 +28,7 @@ const UpdateCamp = () => {
         const deadline = form.get('deadline');
 
         const updatedCampaignInfo = { email, name, thumbnail, title, type, minDonation, description, deadline };
-        console.log(updatedCampaignInfo);
+        // console.log(updatedCampaignInfo);
 
         // console.log("Campaign Submitted:", email, name);
         // alert("Campaign Added Successfully!");
