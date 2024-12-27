@@ -13,6 +13,6 @@ Live Link of website    : https://crowdcube-ac233.web.app/
 
 
 
-Server site gihub repo  : https://github.com/programming-hero-web-course2/b10-a10-server-side-neyaz14
+Server site gihub repo  : https://github.com/neyaz14/CrowdCube-server
 
 
