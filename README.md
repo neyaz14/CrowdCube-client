@@ -9,8 +9,7 @@ Some Features : 1. Firebase based authenticatin process including google login
 Technology    : 1. HTML , CSS , Tailwind, Daisy UI
                 2. React JS, Mongodb, firebase
 
-Live Link of website    : https://crowdcube-ac233.web.app/ 
-
+Live Link of website    : https://crowdcube-ac233.web.app/
 
 
 Server site gihub repo  : https://github.com/neyaz14/CrowdCube-server
